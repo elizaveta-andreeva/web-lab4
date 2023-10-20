@@ -1,0 +1,31 @@
+include layout.pug
+
+link(rel='stylesheet', href='/stylesheets/index.css')
+h1 All users
+if users && users.length
+    .card-container
+        each user in users
+            .user-card
+                .user-title
+                    a.card-link(href='/users/' + user.id)
+                        h2= user.name + ' ' + user.second_name
+
+                .user-photo
+                    img(src=user.photo)
+                .user-info
+                    p
+                        strong email:
+                        |  &#32;
+                        span= user.email
+                    p
+                        strong birthdate:
+                        |  &#32;
+                        span= user.birthdate
+                    p
+                        strong role:
+                        |  &#32;
+                        span= user.role
+                    p
+                        strong status:
+                        |  &#32;
+                        span= user.status

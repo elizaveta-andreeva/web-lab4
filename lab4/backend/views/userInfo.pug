@@ -1,0 +1,47 @@
+include layout.pug
+
+
+link(rel='stylesheet', href='/stylesheets/userInfo.css')
+if user
+    div.container
+        h1= user.name + ' ' + user.second_name
+        img(src=user.photo)
+        ul.user-info
+            li.user-info
+                strong Email:
+                span= user.email
+            li.user-info
+                strong Birth date:
+                span= user.birthdate
+            li.user-info
+                strong Role:
+                select#select_role
+                    option(value='user', selected=user.role === 'user') User
+                    option(value='admin', selected=user.role === 'admin') Admin
+            li.user-info
+                strong Status:
+                select#select_status
+                    option(value='active', selected=user.status === 'active') Active
+                    option(value='pending', selected=user.status === 'pending') Pending
+                    option(value='blocked', selected=user.status === 'blocked') Blocked
+
+            li.user-info
+                strong
+                    a(href=`/users/${user.id}/friends`) Friends:
+                span#span_friends(user-id=user.id)= user.friends
+
+            a#edit_button.btn.btn-secondary.text-light.my-2.info-buttons(href=`/users/${user.id}/edit`)
+                img(width="22" height="22" src="https://img.icons8.com/windows/32/ffffff/edit--v1.png" alt="edit--v1")
+                | &nbsp; Edit
+
+            a#news_button.btn.btn-secondary.text-light.my-2.info-buttons(href=`/users/${user.id}/friends_news`)
+                img(width="22" height="22" src="https://img.icons8.com/ios/50/ffffff/news.png" alt="news")
+                | &nbsp; Friends news
+
+            a#back_button.btn.btn-secondary.text-light.my-2.info-buttons(href='/')
+                img(width="22" height="22" src="https://img.icons8.com/windows/32/ffffff/long-arrow-left.png" alt="long-arrow-left")
+                | &nbsp; Back to All Users
+
+script
+    | const usersData = !{JSON.stringify(users)}
+script(src = "/javascripts/userInfo.js")

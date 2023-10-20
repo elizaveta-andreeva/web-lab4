@@ -1,0 +1,14 @@
+include layout.pug
+link(rel='stylesheet', href='/stylesheets/friendsNews.css')
+h1 Friends News
+if friendsNews && friendsNews.length
+    ul.news-list
+        each news in friendsNews
+            li.news-item
+                .news-author= news.author
+                .news-message= news.message
+                .news-date= news.date
+
+a#back_button.btn.btn-secondary.text-light.my-2.info-buttons(href=`/users/${id}`)
+    img(width="22" height="22" src="https://img.icons8.com/windows/32/ffffff/long-arrow-left.png" alt="long-arrow-left")
+    | &nbsp; Back to User info

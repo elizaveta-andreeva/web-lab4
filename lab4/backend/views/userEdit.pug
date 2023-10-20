@@ -1,0 +1,28 @@
+extends layout.pug
+
+block content
+    link(rel='stylesheet', href='/stylesheets/userEdit.css')
+    h1 Edit user information
+
+    if user
+        form#edit_form.container-fluid(method='POST' action=`/users/${user.id}/edit` enctype="multipart/form-data")
+            .form-row
+                .col-6
+                    .form-group
+                        label.font-weight-bold(for='user_name') Name
+                        input#user_name.form-control(type='text' name='name' autofocus='true' required='' value=user.name)
+                    .form-group
+                        label.font-weight-bold(for='second_name') Second name
+                        input#second_name.form-control(type='text' name='second_name' autofocus='true' required='' value=user.second_name)
+                    .form-group
+                        label.font-weight-bold(for='email') Email
+                        input#email.form-control(type='email' name='email' autofocus='true' required='' value=user.email)
+                    .form-group
+                        label.font-weight-bold(for='birthdate') Birth date
+                        input#birthdate.form-control(type='text' name='birthdate' autofocus='true' required='' value=user.birthdate)
+                    .form-group
+                        label.font-weight-bold.custom-file-upload(for='photo') Upload photo
+                        input#photo.form-control(type="file" name="image")
+            .form-row
+                .text-center.p-3.col-12
+                    button#submit_button.btn.btn-secondary.text-light.my-2.info-buttons(type='submit' form='edit_form') Submit
