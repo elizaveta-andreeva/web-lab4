@@ -1,0 +1,15 @@
+.form-control:focus {
+  border-color: #725db0;
+  box-shadow: inset 0 1px 1px rgb(73, 57, 131), 0 0 8px rgb(166, 148, 224);
+}
+
+#submit_button {
+  background-color: #725db0;
+  color: #FFFFFF;
+  margin-left: 10px;
+}
+
+#submit_button:hover {
+  background-color: #8370be;
+  color: #FFFFFF;
+}

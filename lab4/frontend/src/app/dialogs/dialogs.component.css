@@ -1,0 +1,10 @@
+ a {
+  font-size: 30px;
+  color: #6c53b4;
+  display: block;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #000000;
+}

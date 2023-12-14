@@ -1,0 +1,73 @@
+.container {
+  text-align: center;
+  margin-top: 20px;
+  padding-left: 0
+}
+
+.container img {
+  max-width: 240px;
+  max-height: 240px
+}
+
+.user-info {
+  list-style: none;
+  padding: 0
+}
+
+.user-info li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px
+}
+
+span {
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.options-button {
+  background-color: #725db0;
+  color: #FFFFFF;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.options-button:hover{
+  background-color: #8370be;
+  color: #FFFFFF;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  font-weight: lighter;
+  border: 1px solid #ccc;
+  color: #ffffff;
+  background: #725db0;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.custom-file-upload:hover {
+  background: #846fc4;
+}
+
+#remove_button {
+  background-color: #725db0;
+  color: #FFFFFF;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  border-radius: 4px;
+  border: #725db0;
+}
+
+#remove_button:hover{
+  background-color: #8370be;
+  color: #FFFFFF;
+}
